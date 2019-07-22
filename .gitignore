@@ -1,0 +1,11 @@
+.gradle/
+Supercharged.iml
+Supercharged.ipr
+Supercharged.iws
+build.gradle
+build/
+gradle/
+gradlew
+gradlew.bat
+out/
+run/
