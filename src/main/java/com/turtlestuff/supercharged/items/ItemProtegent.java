@@ -32,7 +32,7 @@ public class ItemProtegent extends Item {
                 playerIn.inventory.setInventorySlotContents(i, ItemStack.EMPTY);
             }
         }
-        
+
         if (!hasAnyDeeta) {
             playerIn.sendMessage(new TextComponentString("I HAVE NO DEETAAAAAAAAAAAAAAAAAAAAAAAAA TO PROTeCT!"));
         } else {
