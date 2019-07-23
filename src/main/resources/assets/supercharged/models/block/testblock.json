@@ -1,12 +1,12 @@
 {
   "parent": "block/cube",
   "textures": {
-    "particle": "supercharged:blocks/testFront",
-    "down": "supercharged:blocks/testDown",
-    "up": "supercharged:blocks/testUp",
-    "east": "supercharged:blocks/testLeft",
-    "west": "supercharged:blocks/testRight",
-    "north": "supercharged:blocks/testFront",
-    "south": "supercharged:blocks/testBack"
+    "particle": "supercharged:blocks/testblock/front",
+    "down": "supercharged:blocks/testblock/down",
+    "up": "supercharged:blocks/testblock/up",
+    "east": "supercharged:blocks/testblock/left",
+    "west": "supercharged:blocks/testblock/right",
+    "north": "supercharged:blocks/testblock/front",
+    "south": "supercharged:blocks/testblock/back"
   }
 }
