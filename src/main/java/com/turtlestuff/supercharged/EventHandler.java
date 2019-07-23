@@ -1,5 +1,6 @@
 package com.turtlestuff.supercharged;
 
+import com.turtlestuff.supercharged.blocks.BlockSecureEShopper;
 import com.turtlestuff.supercharged.blocks.TestBlock;
 import com.turtlestuff.supercharged.blocks.VrabbersBlock;
 import com.turtlestuff.supercharged.items.ItemDeeta;
@@ -21,13 +22,14 @@ public class EventHandler {
         event.getRegistry().register(new ItemProtegent().setRegistryName("protegent").setUnlocalizedName("supercharged.protegent"));
         event.getRegistry().register(new ItemDeeta().setRegistryName("deeta").setUnlocalizedName("supercharged.deeta"));
         event.getRegistry().register(new ItemBlock(ModBlocks.testblock).setRegistryName(ModBlocks.testblock.getRegistryName()));
+        event.getRegistry().register(new ItemBlock(ModBlocks.secure_eshopper).setRegistryName(ModBlocks.secure_eshopper.getRegistryName()));
         event.getRegistry().register(new ItemBlock(ModBlocks.vrabbers).setRegistryName(ModBlocks.vrabbers.getRegistryName()));
     }
 
     @SubscribeEvent
     public static void registerBlock(RegistryEvent.Register<Block> event) {
         event.getRegistry().register(new TestBlock());
+        event.getRegistry().register(new BlockSecureEShopper());
         event.getRegistry().register(new VrabbersBlock());
     }
-
 }
