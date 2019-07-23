@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "particle": "supercharged:blocks/testFront",
+    "down": "supercharged:blocks/testDown",
+    "up": "supercharged:blocks/testUp",
+    "east": "supercharged:blocks/testLeft",
+    "west": "supercharged:blocks/testRight",
+    "north": "supercharged:blocks/testFront",
+    "south": "supercharged:blocks/testBack"
+  }
+}

@@ -1,5 +1,6 @@
 package com.turtlestuff.supercharged.client;
 
+import com.turtlestuff.supercharged.init.ModBlocks;
 import com.turtlestuff.supercharged.init.ModItems;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
@@ -11,13 +12,14 @@ import net.minecraftforge.fml.relauncher.Side;
 
 @Mod.EventBusSubscriber(modid = "supercharged", value = Side.CLIENT)
 public class ClientEventHandler {
-    public static void registerModel(Item item) {
+    public static void registerItemModel(Item item) {
         ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(item.getRegistryName(), "inventory"));
     }
 
     @SubscribeEvent
     public static void registerModels(ModelRegistryEvent event) {
-        registerModel(ModItems.protegent);
-        registerModel(ModItems.deeta);
+        registerItemModel(ModItems.protegent);
+        registerItemModel(ModItems.deeta);
+        registerItemModel(Item.getItemFromBlock(ModBlocks.testblock));
     }
 }
