@@ -1,4 +1,4 @@
-package com.turtlestuff.supercharged;
+package com.turtlestuff.supercharged.client;
 
 import com.turtlestuff.supercharged.init.ModItems;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
