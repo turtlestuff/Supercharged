@@ -18,5 +18,6 @@ public class ClientEventHandler {
     @SubscribeEvent
     public static void registerModels(ModelRegistryEvent event) {
         registerModel(ModItems.protegent);
+        registerModel(ModItems.deeta);
     }
 }
