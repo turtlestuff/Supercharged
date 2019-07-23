@@ -9,3 +9,7 @@ gradlew
 gradlew.bat
 out/
 run/
+supercharged.main.iml
+supercharged.tset.iml
+supercharged.api.iml
+src/main/main.iml
