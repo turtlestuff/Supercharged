@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "particle": "supercharged:blocks/vrabbers/front",
+    "down": "supercharged:blocks/vrabbers/down",
+    "up": "supercharged:blocks/vrabbers/up",
+    "east": "supercharged:blocks/vrabbers/left",
+    "west": "supercharged:blocks/vrabbers/right",
+    "north": "supercharged:blocks/vrabbers/front",
+    "south": "supercharged:blocks/vrabbers/back"
+  }
+}

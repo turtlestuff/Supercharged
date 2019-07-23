@@ -10,6 +10,6 @@ gradlew.bat
 out/
 run/
 supercharged.main.iml
-supercharged.tset.iml
+supercharged.test.iml
 supercharged.api.iml
 src/main/main.iml

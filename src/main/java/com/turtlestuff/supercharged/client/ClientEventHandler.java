@@ -21,5 +21,6 @@ public class ClientEventHandler {
         registerItemModel(ModItems.protegent);
         registerItemModel(ModItems.deeta);
         registerItemModel(Item.getItemFromBlock(ModBlocks.testblock));
+        registerItemModel(Item.getItemFromBlock(ModBlocks.vrabbers));
     }
 }
