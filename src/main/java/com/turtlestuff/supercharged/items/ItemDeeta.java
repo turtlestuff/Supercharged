@@ -14,7 +14,7 @@ public class ItemDeeta extends Item {
 
     public ItemDeeta() {
         super();
-        setMaxStackSize(1);
+        setMaxStackSize(64);
         setCreativeTab(ModItems.superchargedTab);
     }
 
@@ -26,7 +26,7 @@ public class ItemDeeta extends Item {
 
     @Override
     public boolean onLeftClickEntity(ItemStack stack, EntityPlayer player, Entity entity) {
-        player.sendMessage(new TextComponentString("OH NO!!!! THE DEETA IS IN DANGER!!!"));
+        player.sendMessage(new TextComponentString("OH NO!!!! THE DEETA IS IN DANGER!!! USE PROTEGENT"));
         return super.onLeftClickEntity(stack, player, entity);
     }
 }
