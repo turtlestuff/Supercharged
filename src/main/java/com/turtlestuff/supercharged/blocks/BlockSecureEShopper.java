@@ -1,18 +1,20 @@
 package com.turtlestuff.supercharged.blocks;
 
+import com.turtlestuff.supercharged.tileentities.TileEShopper;
+import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.player.EntityPlayerMP;
-import net.minecraft.network.play.server.SPacketChat;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.text.ChatType;
 import net.minecraft.util.text.TextComponentString;
 import net.minecraft.world.World;
 
-public class BlockSecureEShopper extends BaseBlock {
+import javax.annotation.Nullable;
+
+public class BlockSecureEShopper extends BaseBlock implements ITileEntityProvider {
     public BlockSecureEShopper() {
         super(Material.ROCK, "secure_eshopper");
     }
@@ -27,11 +29,16 @@ public class BlockSecureEShopper extends BaseBlock {
             str = new TextComponentString("You are too poor for secure e-shopping!");
         else {
             playerIn.addExperienceLevel(-1);
-            str = new TextComponentString("Securely e-shopped!");
+            int eshopped = ((TileEShopper)worldIn.getTileEntity(pos)).eshop();
+            str = new TextComponentString("Securely e-shopped ".concat(Integer.toString(eshopped)).concat(" times!"));
         }
-
-        ((EntityPlayerMP) playerIn).connection.sendPacket(new SPacketChat(str, ChatType.GAME_INFO));
-
+        playerIn.sendStatusMessage(str, true);
         return super.onBlockActivated(worldIn, pos, state, playerIn, hand, facing, hitX, hitY, hitZ);
+    }
+
+    @Nullable
+    @Override
+    public TileEntity createNewTileEntity(World worldIn, int meta) {
+        return new TileEShopper();
     }
 }
