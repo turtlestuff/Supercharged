@@ -35,8 +35,11 @@ public class VrabbersBlock extends BaseBlock {
 
     @Override
     public void onBlockDestroyedByPlayer(World worldIn, BlockPos pos, IBlockState state) {
-        if(worldIn.isRemote) return; //doesnt even fire????
-        worldIn.getClosestPlayer(pos.getX(), pos.getY(), pos.getZ(), 0.0, false).sendMessage(new TextComponentString("dont kill me :("));
+        if(worldIn.isRemote) return;
+        EntityPlayer closestPlayer = worldIn.getClosestPlayer(pos.getX(), pos.getY(), pos.getZ(), 6.0  , false);
+        if (closestPlayer != null) {
+            closestPlayer.sendMessage(new TextComponentString("dont kill me :("));
+        }
         super.onBlockDestroyedByPlayer(worldIn, pos, state);
     }
 }
