@@ -12,10 +12,19 @@ public class TileEShopper extends TileEntity {
         shopped = compound.getInteger("shopped");
     }
 
-    public int eshop() {
+    public int deposit() {
         shopped++;
         markDirty();
         return shopped;
+    }
+
+    public boolean buy() {
+        if (shopped >= 5) {
+            shopped-=5;
+            markDirty();
+            return true;
+        }
+        return false;
     }
 
     @Override
