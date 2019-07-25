@@ -16,7 +16,7 @@ import javax.xml.soap.Text;
 
 public class VrabbersBlock extends BaseBlock {
     public VrabbersBlock() {
-        super(Material.GRASS,"vrabbers" );
+        super(Material.GRASS, "vrabbers");
     }
 
     @Override
@@ -28,15 +28,19 @@ public class VrabbersBlock extends BaseBlock {
 
     @Override
     public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
-        if(worldIn.isRemote || hand.equals(EnumHand.OFF_HAND)) return super.onBlockActivated(worldIn, pos, state, playerIn, hand, facing, hitX, hitY, hitZ);
+        if (worldIn.isRemote || hand.equals(EnumHand.OFF_HAND))
+            return super.onBlockActivated(worldIn, pos, state, playerIn, hand, facing, hitX, hitY, hitZ);
         playerIn.sendMessage(new TextComponentString("thonks for the tomches :)"));
         return super.onBlockActivated(worldIn, pos, state, playerIn, hand, facing, hitX, hitY, hitZ);
     }
 
     @Override
     public void onBlockDestroyedByPlayer(World worldIn, BlockPos pos, IBlockState state) {
-        if(worldIn.isRemote) return; //doesnt even fire????
-        worldIn.getClosestPlayer(pos.getX(), pos.getY(), pos.getZ(), 0.0, false).sendMessage(new TextComponentString("dont kill me :("));
+        if (worldIn.isRemote) return;
+        EntityPlayer closestPlayer = worldIn.getClosestPlayer(pos.getX(), pos.getY(), pos.getZ(), 6.0, false);
+        if (closestPlayer != null) {
+            closestPlayer.sendMessage(new TextComponentString("dont kill me :("));
+        }
         super.onBlockDestroyedByPlayer(worldIn, pos, state);
     }
 }

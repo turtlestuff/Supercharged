@@ -77,7 +77,7 @@ public class TileEShopper extends TileEntity implements IEnergyStorage {
 
     public boolean buy() {
         if (shopped >= 5) {
-            shopped-=5;
+            shopped -= 5;
             markDirty();
             return true;
         }
