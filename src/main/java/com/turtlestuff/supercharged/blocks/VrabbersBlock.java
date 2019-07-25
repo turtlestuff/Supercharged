@@ -12,8 +12,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextComponentString;
 import net.minecraft.world.World;
 
-import javax.xml.soap.Text;
-
 public class VrabbersBlock extends BaseBlock {
     public VrabbersBlock() {
         super(Material.GRASS, "vrabbers");

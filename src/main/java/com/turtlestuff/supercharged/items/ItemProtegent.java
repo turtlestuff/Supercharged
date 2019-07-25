@@ -10,8 +10,6 @@ import net.minecraft.util.NonNullList;
 import net.minecraft.util.text.TextComponentString;
 import net.minecraft.world.World;
 
-import java.util.stream.IntStream;
-
 public class ItemProtegent extends Item {
 
     public ItemProtegent() {
