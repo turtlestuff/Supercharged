@@ -42,8 +42,10 @@ public class TileEShopper extends TileEntity implements IEnergyStorage {
         if (energy+maxReceive>getMaxEnergyStored()) {
             maxReceive = getMaxEnergyStored()-energy;
         }
-        if (!simulate)
+        if (!simulate && maxReceive!= 0) {
             energy += maxReceive;
+            markDirty();
+        }
         return maxReceive;
     }
 
