@@ -5,7 +5,6 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.energy.CapabilityEnergy;
-import net.minecraftforge.energy.EnergyStorage;
 import net.minecraftforge.energy.IEnergyStorage;
 
 import javax.annotation.Nullable;
@@ -33,16 +32,16 @@ public class TileEShopper extends TileEntity implements IEnergyStorage {
     @Override
     public <T> T getCapability(Capability<T> capability, @Nullable EnumFacing facing) {
         if (capability.equals(CapabilityEnergy.ENERGY))
-            return (T)this;
+            return (T) this;
         return super.getCapability(capability, facing);
     }
 
     @Override
     public int receiveEnergy(int maxReceive, boolean simulate) {
-        if (energy+maxReceive>getMaxEnergyStored()) {
-            maxReceive = getMaxEnergyStored()-energy;
+        if (energy + maxReceive > getMaxEnergyStored()) {
+            maxReceive = getMaxEnergyStored() - energy;
         }
-        if (!simulate && maxReceive!= 0) {
+        if (!simulate && maxReceive != 0) {
             energy += maxReceive;
             markDirty();
         }

@@ -1,5 +1,6 @@
 itemGroup.supercharged=Supercharged
 item.supercharged.protegent.name=Proto
 item.supercharged.deeta.name=Deeta
-item.supercharged.proto_gauntlent.name=Proto Gauntlet
+item.supercharged.proto_gauntlet.name=Proto Gauntlet
 tile.supercharged.vrabbers.name=Tortle
+death.attack.supercharged.proto_gauntlet=%s was on facebook and games at work
