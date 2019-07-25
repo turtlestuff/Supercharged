@@ -33,6 +33,6 @@ public class EventHandler {
         event.getRegistry().register(new TestBlock());
         event.getRegistry().register(new BlockSecureEShopper());
         event.getRegistry().register(new VrabbersBlock());
-        GameRegistry.registerTileEntity(TileEShopper.class, "supercharged_secure_eshopper");
+        GameRegistry.registerTileEntity(TileEShopper.class, "supercharged:secure_eshopper");
     }
 }
