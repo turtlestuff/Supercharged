@@ -1,5 +1,7 @@
 package com.turtlestuff.supercharged.proxy;
 
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.GuiScreen;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -17,6 +19,12 @@ public class ClientProxy implements IProxy {
 
     @Override
     public void postInit(FMLPostInitializationEvent event) {
+
+    }
+
+    @Override
+    public void showSimpleGui(GuiScreen gui) {
+        Minecraft.getMinecraft().displayGuiScreen(gui);
 
     }
 }
