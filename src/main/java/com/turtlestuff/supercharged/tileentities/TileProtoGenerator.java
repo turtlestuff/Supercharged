@@ -18,11 +18,13 @@ import net.minecraftforge.energy.IEnergyStorage;
 import javax.annotation.Nullable;
 
 public class TileProtoGenerator extends TileEntityLockable implements IInventory, IEnergyStorage, ITickable {
-    private ItemStack deetas = null;
+    private ItemStack deetas = new ItemStack(ModItems.deeta);
     private int energy = 0;
     private String name = "";
 
-    public TileProtoGenerator() { super(); }
+    public TileProtoGenerator() {
+        super();
+    }
 
     public TileProtoGenerator(String name) {
         this();
