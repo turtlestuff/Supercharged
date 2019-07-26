@@ -1,5 +1,7 @@
 package com.turtlestuff.supercharged;
 
+import com.turtlestuff.supercharged.containers.ContainerInventoryProtoGenerator;
+import com.turtlestuff.supercharged.guis.container.GuiProtoGenerator;
 import com.turtlestuff.supercharged.tileentities.TileProtoGenerator;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
@@ -15,10 +17,10 @@ public class GuiHandler implements IGuiHandler {
     @Override
     public Object getServerGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
         switch (ID) {
-            case 1:
+            case 0:
                 TileEntity tileEntity = world.getTileEntity(new BlockPos(x, y, z));
                 if (tileEntity instanceof TileProtoGenerator) {
-                    return new ContainerInventoryFurnace(player.inventory, (TileProtoGenerator) tileEntity);
+                    return new ContainerInventoryProtoGenerator(player.inventory, (TileProtoGenerator) tileEntity);
                 }
                 return null;
         }
@@ -29,10 +31,10 @@ public class GuiHandler implements IGuiHandler {
     @Override
     public Object getClientGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
         switch (ID) {
-            case 1:
+            case 0:
                 TileEntity tileEntity = world.getTileEntity(new BlockPos(x, y, z));
                 if (tileEntity instanceof TileProtoGenerator) {
-                    return new GuiInventoryFurnace(player.inventory, (TileProtoGenerator) tileEntity);
+                    return new GuiProtoGenerator(player.inventory, (TileProtoGenerator) tileEntity);
                 }
                 return null;
         }

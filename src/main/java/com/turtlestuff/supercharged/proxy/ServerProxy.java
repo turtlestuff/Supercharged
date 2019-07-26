@@ -1,9 +1,12 @@
 package com.turtlestuff.supercharged.proxy;
 
+import com.turtlestuff.supercharged.GuiHandler;
+import com.turtlestuff.supercharged.Supercharged;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.network.NetworkRegistry;
 
 public class ServerProxy implements IProxy {
     @Override
@@ -13,7 +16,7 @@ public class ServerProxy implements IProxy {
 
     @Override
     public void init(FMLInitializationEvent event) {
-
+        NetworkRegistry.INSTANCE.registerGuiHandler(Supercharged.instance, new GuiHandler());
     }
 
     @Override

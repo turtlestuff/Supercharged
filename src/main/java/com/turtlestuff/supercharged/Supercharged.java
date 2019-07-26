@@ -10,6 +10,8 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
 @Mod(modid = "supercharged", useMetadata = true)
 public class Supercharged {
+    @Mod.Instance("supercharged")
+    public static Supercharged instance;
 
     @SidedProxy(clientSide = "com.turtlestuff.supercharged.proxy.ClientProxy", serverSide = "com.turtlestuff.supercharged.proxy.ServerProxy")
     public static IProxy proxy;
