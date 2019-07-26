@@ -10,8 +10,6 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.util.text.TextComponentString;
 import net.minecraft.world.World;
 
-import java.util.Random;
-
 public class ItemProtoGauntlet extends Item {
 
     static DamageSource damageSource = new DamageSource("supercharged.proto_gauntlet")
@@ -40,11 +38,10 @@ public class ItemProtoGauntlet extends Item {
 
         int count = (int) Math.ceil(worldIn.playerEntities.size() * 0.2);
 
-        Random rnd = new Random();
         for (int i = 0; i < count; i++) {
             int range = worldIn.playerEntities.size() - 1;
             // If range is 0 (there is only one player), do not choose random player
-            EntityPlayer player = worldIn.playerEntities.get(range == 0 ? 0 : rnd.nextInt(range));
+            EntityPlayer player = worldIn.playerEntities.get(range == 0 ? 0 : worldIn.rand.nextInt(range));
             player.attackEntityFrom(damageSource, player.getMaxHealth());
         }
 

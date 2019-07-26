@@ -1,4 +1,4 @@
-package com.turtlestuff.supercharged.guis.simple;
+package com.turtlestuff.supercharged.guis;
 
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiScreen;
