@@ -21,11 +21,7 @@ public class TestGui extends GuiScreen {
     protected void actionPerformed(GuiButton button) throws IOException {
         if (button.id == 1) {
             GuiButton buttonToSh = buttonList.get(0);
-            if (buttonToSh.visible) {
-                buttonToSh.visible = false;
-            } else {
-                buttonToSh.visible = true;
-            }
+            buttonToSh.visible = !buttonToSh.visible;
             buttonList.set(0, buttonToSh);
         }
         super.actionPerformed(button);
