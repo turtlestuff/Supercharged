@@ -32,8 +32,12 @@ public class TileCable extends TileEntity implements IEnergyStorage, ITickable {
     @Nullable
     @Override
     public <T> T getCapability(Capability<T> capability, @Nullable EnumFacing facing) {
+        if (facing != null && facing.equals(world.getBlockState(pos).getValue(BaseBlock.FACING)))
+            return super.getCapability(capability, facing);
+
         if (capability.equals(CapabilityEnergy.ENERGY))
             return (T) this;
+
         return super.getCapability(capability, facing);
     }
 
@@ -92,7 +96,7 @@ public class TileCable extends TileEntity implements IEnergyStorage, ITickable {
         EnumFacing thisFacing = world.getBlockState(pos).getValue(BaseBlock.FACING);
         for (EnumFacing facing : EnumFacing.values()) {
             if (facing.equals(thisFacing.getOpposite())) {
-                return; // We do not want to transfer energy backwards
+                continue; // We do not want to transfer energy backwards
             }
 
             TileEntity block = world.getTileEntity(pos.offset(facing));
@@ -101,7 +105,7 @@ public class TileCable extends TileEntity implements IEnergyStorage, ITickable {
 
             IEnergyStorage capability = block.getCapability(CapabilityEnergy.ENERGY, facing.getOpposite());
             if (capability == null)
-                return; // Block cannot accept energy from this side
+                continue; // Block cannot accept energy from this side
 
             int extracted = capability.receiveEnergy(50, false);
             extractEnergy(extracted, false);

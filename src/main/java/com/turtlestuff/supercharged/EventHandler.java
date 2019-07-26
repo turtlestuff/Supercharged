@@ -1,15 +1,13 @@
 package com.turtlestuff.supercharged;
 
-import com.turtlestuff.supercharged.blocks.BlockCable;
-import com.turtlestuff.supercharged.blocks.BlockSecureEShopper;
-import com.turtlestuff.supercharged.blocks.TestBlock;
-import com.turtlestuff.supercharged.blocks.VrabbersBlock;
+import com.turtlestuff.supercharged.blocks.*;
 import com.turtlestuff.supercharged.init.ModBlocks;
 import com.turtlestuff.supercharged.items.ItemDeeta;
 import com.turtlestuff.supercharged.items.ItemProtegent;
 import com.turtlestuff.supercharged.items.ItemProtoGauntlet;
 import com.turtlestuff.supercharged.tileentities.TileCable;
 import com.turtlestuff.supercharged.tileentities.TileEShopper;
+import com.turtlestuff.supercharged.tileentities.TileProtoGenerator;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
@@ -32,6 +30,7 @@ public class EventHandler {
         event.getRegistry().register(new ItemBlock(ModBlocks.secure_eshopper).setRegistryName(ModBlocks.secure_eshopper.getRegistryName()));
         event.getRegistry().register(new ItemBlock(ModBlocks.vrabbers).setRegistryName(ModBlocks.vrabbers.getRegistryName()));
         event.getRegistry().register(new ItemBlock(ModBlocks.cable).setRegistryName(ModBlocks.cable.getRegistryName()));
+        event.getRegistry().register(new ItemBlock(ModBlocks.proto_generator).setRegistryName(ModBlocks.proto_generator.getRegistryName()));
     }
 
     @SubscribeEvent
@@ -40,8 +39,10 @@ public class EventHandler {
         event.getRegistry().register(new BlockSecureEShopper());
         event.getRegistry().register(new VrabbersBlock());
         event.getRegistry().register(new BlockCable());
+        event.getRegistry().register(new BlockProtoGenerator());
 
         GameRegistry.registerTileEntity(TileEShopper.class, new ResourceLocation("supercharged:secure_eshopper"));
         GameRegistry.registerTileEntity(TileCable.class, new ResourceLocation("supercharged:cable"));
+        GameRegistry.registerTileEntity(TileProtoGenerator.class, new ResourceLocation("supercharged:proto_generator"));
     }
 }
