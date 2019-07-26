@@ -1,6 +1,6 @@
 package com.turtlestuff.supercharged;
 
-import com.turtlestuff.supercharged.containers.ContainerInventoryProtoGenerator;
+import com.turtlestuff.supercharged.containers.ContainerProtoGenerator;
 import com.turtlestuff.supercharged.guis.container.GuiProtoGenerator;
 import com.turtlestuff.supercharged.tileentities.TileProtoGenerator;
 import net.minecraft.entity.player.EntityPlayer;
@@ -20,7 +20,7 @@ public class GuiHandler implements IGuiHandler {
             case 0:
                 TileEntity tileEntity = world.getTileEntity(new BlockPos(x, y, z));
                 if (tileEntity instanceof TileProtoGenerator) {
-                    return new ContainerInventoryProtoGenerator(player.inventory, (TileProtoGenerator) tileEntity);
+                    return new ContainerProtoGenerator(player.inventory, (TileProtoGenerator) tileEntity);
                 }
                 return null;
         }

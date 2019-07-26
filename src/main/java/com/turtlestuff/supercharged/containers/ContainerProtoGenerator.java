@@ -9,10 +9,10 @@ import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
 
-public class ContainerInventoryProtoGenerator extends Container {
+public class ContainerProtoGenerator extends Container {
     private IInventory protoGenerator;
     private int sizeInventory = 1;
-    public ContainerInventoryProtoGenerator(InventoryPlayer invPlayer, IInventory tileEntity){
+    public ContainerProtoGenerator(InventoryPlayer invPlayer, IInventory tileEntity){
         protoGenerator = tileEntity;
         sizeInventory = protoGenerator.getSizeInventory();
         addSlotToContainer(new DeetaSlot(protoGenerator,0,56,35));
